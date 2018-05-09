@@ -6,7 +6,7 @@ function dashTemplate() {
   return `${topMenuTemplate()}
 
   <div id="profile">
-      <div id="username" class="text-center">${GG_CACHE['user']}</div>
+      <div id="username" class="text-center">${guldname}</div>
   </div>
 
   <div id="game_pick" class="row">
