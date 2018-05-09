@@ -4,14 +4,12 @@
 var activeTab = 'games'
 var wrapper
 var manifest // eslint-disable-line no-unused-vars
-var myKey // eslint-disable-line no-unused-vars
-var ghcreds // eslint-disable-line no-unused-vars
-var GG_CACHE = {'user': '', 'email': '', 'ghuser': ''}
-var gh // eslint-disable-line no-unused-vars
-var b // eslint-disable-line no-unused-vars
-var keyring = new openpgp.Keyring() // eslint-disable-line no-unused-vars
-// keyring.clear()
-// keyring.store()
+var guldApp
+var guldname
+var guldmail
+var guldfpr
+var ghavatar
+var bals
 
 var ERR_TEMPLATE = `<div id="err-div" class="row"> </div>` // eslint-disable-line no-unused-vars
 var LOGO_TEMPLATE = // eslint-disable-line no-unused-vars
@@ -30,9 +28,9 @@ const BACK_TEMPLATE = `<div id="back-div"><img src="images/back.svg"></div>` // 
 function topMenuTemplate () { // eslint-disable-line no-unused-vars
   var GG_BAL = 0
   var USD_VAL = 0
-  if (GG_CACHE.hasOwnProperty('bals') && GG_CACHE['bals'].hasOwnProperty('GG')) {
-    GG_BAL = GG_CACHE['bals']['GG']
-    USD_VAL = GG_CACHE['bals']['GG'] / 400 * 75
+  if (typeof bals !== 'undefined' && bals.hasOwnProperty('GG')) {
+    GG_BAL = bals['GG']
+    USD_VAL = bals['GG'] / 400 * 75
   }
   return `<nav>
         <img id="logo_dash" src="images/logo2.svg">
@@ -79,8 +77,9 @@ function ghOAUTH () { // eslint-disable-line no-unused-vars
 }
 
 function load (err) { // eslint-disable-line no-unused-vars
-  document.getElementById('err-div').innerHTML = `<p class="error">${err}</p>`
-  if (keyring.privateKeys.keys.length > 0) {
+  var errdiv = document.getElementById('err-div')
+  if (errdiv) errdiv.innerHTML = `<p class="error">${err}</p>`
+  if (guldname) {
     // Header menu
       var ld = document.getElementById('logo_dash')
       if (ld) {
