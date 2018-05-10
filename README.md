@@ -2,9 +2,9 @@
 
 Chrome extension for guld games.
 
-To make a browser-based app (in this case, a Chrome extension) work with [`ledger`](http://ledger-cli.org/), a fundamentally command-line oriented application, we've had to patch and/or fork a number of its dependencies. Here's an overview of what it takes to get this extension running.
+**Note!** We are in the process of splitting the functionality of this extension. The wallet, ledger, and key-management functionality is moving to the [guld-chrome extension](https://github.com/guldcoin/guld-chrome). This will allow us to remove that functionality from `gg-chrome` and significantly simplify the development process for anyone who wishes to develop Guld apps.
 
-**Note!** We are in the process of splitting the functionality of this extension. The wallet and key-management functionality is moving to the [guld-chrome extension](https://github.com/guldcoin/guld-chrome).
+To make a browser-based app (in this case, a Chrome extension) work with [`ledger`](http://ledger-cli.org/), a fundamentally command-line oriented application, we've had to patch and/or fork a number of its dependencies. Here's an overview of what it takes to get this extension running.
 
 ## Ledger
 
@@ -19,8 +19,6 @@ We are considering making a dedicated ledger extension to manage this connection
 ## PGP
 
 Only [openpgp.js](https://github.com/openpgpjs/openpgpjs) is required, and no forking is necessary.
-
-We are strongly considering making a standalone key-management extension forked out of the gg extension.
 
 ## git
 
