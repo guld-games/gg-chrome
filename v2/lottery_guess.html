@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+  <!-- Style CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="logged">
+  <partial file="partials/menu.html"></partial>
+  <section id="content">
+
+    <div class="black_bg">
+      <div class="row text-center">
+        <div class="container">
+          <h1>Lottery</h1>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="container">
+          <div id="room_name">Room name</div>
+        </div>
+      </div>
+
+      <div id="room_info" class="row">
+        <div class="container">
+          <div id="bet_amount_info">
+            <div class="name">Bet Amount</div>
+            <div class="value">350</div>
+          </div>
+          <div id="max_info">
+            <div class="name">Max</div>
+            <div class="value">645</div>
+          </div>
+          <div id="win_chance_info">
+            <div class="name">Win Chance</div>
+            <div class="value">25%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="container">
+          <input id="guess_amount" type="text" placeholder="1"></input>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="container">
+          <button>Guess</button>
+        </div>
+      </div>
+
+      <partial file="partials/error.html"></partial>
+      <partial file="partials/back.html"></partial>
+    </div>
+
+  </section>
+  <partial file="partials/ongoing.html"></partial>
+  <script src="js/htmlpartial.js"></script>
+</body>
+
+</html>

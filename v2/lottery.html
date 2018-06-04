@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+  <!-- Style CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="logged">
+  <partial file="partials/menu.html"></partial>
+  <section id="content">
+    <div class="black_bg">
+      <div id="create_lottery_rooms" class="row text-right">
+        <div class="container-fluid">
+          <h1>Lottery</h1>
+          <button id="create_lottery_room" class="text-center" value="create">
+            <img class="plus" src="images/plus.svg">
+            <span>Create</span>
+          </button>
+          <div id="lottery_room_creation" class="text-center">
+            <input id="lottery_room_name" type="text" placeholder="Name of the game" autofocus></input>
+            <div class="notice">Enter odds between 1 to 65535</div>
+            <input id="lottery_odds" type="number" min="1" max="65535" placeholder="Lucky number"></input>
+            <div id="bet">
+              Bet Amount
+              <img src="images/chip.svg">
+              <input id="lottery_bet_amount" type="number" min="1" max="${GG_CACHE['bals']['GG']}"></input>
+            </div>
+            <button class="go" id="create-game">Create</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="filter" class="row text-right">
+        <div class="container-fluid">
+          <div class="active"> All rooms</div>
+          <div> My rooms</div>
+          <hr>
+        </div>
+      </div>
+
+      <div id="lottery_room_list" class="row text-left">
+        <div class="container-fluid">
+          <div class="row room mr-auto">
+            <div class="col-4">
+              Game room 1
+            </div>
+            <div id="room_info" class="col-6">
+              <div id="bet_amount_info">
+                <div class="name">Bet Amount</div>
+                <div class="value">350</div>
+              </div>
+              <div id="max_info">
+                <div class="name">Max</div>
+                <div class="value">645</div>
+              </div>
+              <div id="win_chance_info">
+                <div class="name">Win Chance</div>
+                <div class="value">25%</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <button class="go">Join</button>
+            </div>
+          </div>
+          <div class="row room mr-auto">
+            <div class="col-4">
+              Funny room 45
+            </div>
+            <div id="room_info" class="col-6">
+              <div id="bet_amount_info">
+                <div class="name">Bet Amount</div>
+                <div class="value">300</div>
+              </div>
+              <div id="max_info">
+                <div class="name">Max</div>
+                <div class="value">233</div>
+              </div>
+              <div id="win_chance_info">
+                <div class="name">Win Chance</div>
+                <div class="value">50%</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <button class="go">Join</button>
+            </div>
+          </div>
+          ${openGames}
+        </div>
+      </div>
+
+      <partial file="partials/error.html"></partial>
+      <partial file="partials/back.html"></partial>
+    </div>
+
+  </section>
+  <partial file="partials/ongoing.html"></partial>
+  <script src="js/htmlpartial.js"></script>
+</body>
+
+</html>

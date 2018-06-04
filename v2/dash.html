@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+  <!-- Style CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <partial file="partials/menu.html"></partial>
+  <section id="content">
+    <div id="profile" class="text-center">
+      <img id="profile_frame" src="images/pic.svg">
+      <img id="profile_picture" src="images/temp/chriss.jpg">
+      <div id="username">cmejia</div>
+    </div>
+
+    <div id="game_pick" class="row">
+      <img id="lottery_pick" class="pick active" src="images/lottery.svg">
+      <div class="description text-center">Lottery</div>
+    </div>
+
+    <partial file="partials/error.html"></partial>
+
+    <div class="row">
+      <button id="playgame" type="submit" value="Play">Play Game</button>
+    </div>
+  </section>
+  <partial file="partials/ongoing.html"></partial>
+  <script src="js/htmlpartial.js"></script>
+</body>
+
+</html>

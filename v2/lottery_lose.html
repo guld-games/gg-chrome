@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+  <!-- Odometer -->
+  <link href="css/vendor/odometer-theme-train-station.css" rel="stylesheet">
+  <!-- Style CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="logged">
+  <partial file="partials/menu.html"></partial>
+  <section id="content">
+    <div id="lottery_result" class="black_bg">
+      <div id="result_head" class="row">
+        <div class="container text-center">
+          <img id="result_head_img" src="images/loser.svg">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container text-center">
+          <div id="guess_amount" class="odometer">165535</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container text-center">
+          <div id="result_info">
+            <div id="result_indicator">
+              <button disabled>You Lose</button>
+            </div>
+
+            <div id="guess_result_amount">
+              <img src="images/chip.svg">
+              <span>-250</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <partial file="partials/error.html"></partial>
+      <partial file="partials/back.html"></partial>
+    </div>
+
+  </section>
+  <partial file="partials/ongoing.html"></partial>
+  <script src="js/htmlpartial.js"></script>
+  <script src="js/vendor/odometer.js" type="text/javascript"></script>
+</body>
+
+</html>
